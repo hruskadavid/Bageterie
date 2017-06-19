@@ -10,7 +10,17 @@
 
     <Grid>
         <StackPanel Margin="20">
-            <ListView x:Name="Products">
+            <ListView x:Name="PersonsList" SelectionChanged="PersonsList_SelectionChanged" Grid.Column="1" Height="67">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Název Bagety" DisplayMemberBinding="{Binding Item.Jmeno}"></GridViewColumn>
+                        <GridViewColumn Header="Počet" DisplayMemberBinding="{Binding Pocet}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Click="Pridat" Content="+1" Margin="10"></Button>
+            <Button Click="Pridat" Content="-1" Margin="10"></Button>
+            <ListView x:Name="Products" SelectionChanged="Products_SelectionChanged">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Vertical"></StackPanel>
@@ -25,13 +35,15 @@
                                 <TextBlock Text="Cena: "></TextBlock>
                                 <TextBlock Text="{Binding Cena}"></TextBlock>
                                 <TextBlock Text=" Kč"></TextBlock>
+                                <TextBlock Text="Alergeny: "></TextBlock>
+                                <TextBlock Text="{Binding Alergeny}"></TextBlock>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
 
             </ListView>
-            
+            <TextBlock x:Name="Created" Visibility="Hidden">Objednávka vytvořena</TextBlock>
             <Button Click="Button_Click_1" Content="Vytvořit objednávku" Margin="0, 10"></Button>
             <Button Click="Button_Click" Content="Nový produkt" Margin="0, 10"></Button>
         </StackPanel>

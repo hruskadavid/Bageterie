@@ -26,13 +26,12 @@
         </DataTemplate>
     </Page.Resources>
     <StackPanel>
-        <ListView x:Name="OrderList">
+        <ListView x:Name="Objednavky">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Číslo objednávky" Width="100" DisplayMemberBinding="{Binding ID}" />
-                    <GridViewColumn Header="Stáří" Width="100" DisplayMemberBinding="{Binding Date}" />
+                    <GridViewColumn Header="Datum vytvoření" Width="100" DisplayMemberBinding="{Binding Datum}" />
                     <GridViewColumn Header="Položky" Width="100" DisplayMemberBinding="{Binding Items}" />
-
                 </GridView>
             </ListView.View>
         </ListView>

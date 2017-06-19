@@ -23,6 +23,8 @@
             <TextBox x:Name="Name"></TextBox>
             <TextBlock Text="Cena"></TextBlock>
             <TextBox x:Name="Price"></TextBox>
+            <TextBlock Text="Alergeny"></TextBlock>
+            <TextBox x:Name="Alergeny" Text="1, 2, 3"></TextBox>
             <Button Click="Button_Click" Content="Vytvořit nový produkt"></Button>
             <Button Click="Button_Click_1" Content="Zpět na novou objednávku"></Button>
             <TextBlock x:Name="result"></TextBlock>

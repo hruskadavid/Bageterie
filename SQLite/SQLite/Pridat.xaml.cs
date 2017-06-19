@@ -22,13 +22,13 @@ namespace SQLite
     /// </summary>
     public partial class Pridat : Page
     {
-        ObjednavkaDatabase Database;
+        
         MainWindow Main;
-        public Pridat(ObjednavkaDatabase _database, MainWindow _main)
+        public Pridat(MainWindow _main)
         {
             InitializeComponent();
             
-            Database = _database;
+           
             Main = _main;
 
         }
@@ -37,13 +37,14 @@ namespace SQLite
         {
             Produkt item = new Produkt();
             item.Jmeno = Name.Text;
+            item.Alergeny = Alergeny.Text;
             item.Cena = Int32.Parse(Price.Text);
-            Database.SaveItemAsync(item);
+            App.Database.SaveItemAsync(item);
             result.Text = "Produkt vytvořen";
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Main.New.NavigationService.Navigate(new NovaObjednavka(Database, Main));
+            Main.New.NavigationService.Navigate(new NovaObjednavka(Main));
         }
 
     }

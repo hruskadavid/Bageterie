@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace SQLite
 {
-
-    public class Produkt
+    
+    public class AlergenyTrida
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Jmeno { get; set; }
-        public int Cena { get; set; }
-        public string Alergeny { get; set; }
-        public Produkt()
+        public int ProduktID { get; set; }
+
+        public AlergenyTrida()
         {
 
         }
 
     }
 }
+

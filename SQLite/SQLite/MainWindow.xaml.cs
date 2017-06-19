@@ -26,28 +26,15 @@ namespace SQLite
         public MainWindow()
         {
             InitializeComponent();
+            
 
-           
 
-            Listing.NavigationService.Navigate(new List(Database));
 
-            New.NavigationService.Navigate(new NovaObjednavka(Database, this));
+            Listing.NavigationService.Navigate(new List());
 
-        }
+            New.NavigationService.Navigate(new NovaObjednavka(this));
 
-        private static ObjednavkaDatabase _database;
-        public static ObjednavkaDatabase Database
-        {
-            get
-            {
-                if (_database == null)
-                {
-                    var fileHelper = new FileHelper();
-                    _database = new ObjednavkaDatabase(fileHelper.GetLocalFilePath("ObjednavkaSQLite.db3"));
-                }
-                return _database;
-            }
-
+            Alergeny.NavigationService.Navigate(new Alergeny(this));
         }
     }
 }

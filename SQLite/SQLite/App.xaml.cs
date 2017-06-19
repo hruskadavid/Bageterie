@@ -14,9 +14,20 @@ namespace SQLite
     /// </summary>
     public partial class App : Application
     {
+        private static ObjednavkaDatabase _database;
 
-      
+        public static ObjednavkaDatabase Database
+        {
+            get
+            {
+                if (_database == null)
+                {
+                    var fileHelper = new FileHelper();
+                    _database = new ObjednavkaDatabase(fileHelper.GetLocalFilePath("ObjednavkaDatabase.db3"));
+                }
+                return _database;
+            }
+        }
+
     }
-
-
 }

@@ -106,14 +106,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AlergenyTrida.cs" />
     <Compile Include="List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
     <Compile Include="NovaObjednavka.xaml.cs">
       <DependentUpon>NovaObjednavka.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ObjednanyProdukt.cs" />
     <Compile Include="ObjednavkaDatabase.cs" />
     <Compile Include="FileHelper.cs" />
+    <Compile Include="Alergeny.xaml.cs">
+      <DependentUpon>Alergeny.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VybranaVec.cs" />
     <Page Include="List.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +138,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NovaObjednavka.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Alergeny.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

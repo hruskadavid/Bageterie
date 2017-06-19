@@ -1,6 +1,7 @@
 ﻿using SQLite.Entity;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,24 +18,15 @@ using System.Windows.Shapes;
 namespace SQLite
 {
     /// <summary>
-    /// Interaction logic for List.xaml
+    /// Interakční logika pro Page1.xaml
     /// </summary>
-    public partial class List : Page
+    public partial class Alergeny : Page
     {
-        public List()
+        public Alergeny(MainWindow _main)
         {
             InitializeComponent();
-            //Objednavka kokot = new Objednavka();
-            //kokot.ID = 1;
-            //App.Database.DeleteItemAsync(kokot);
-
-
-
-            List<Objednavka> orders = App.Database.GetItemsNotDoneAsync().Result;
+            Products.ItemsSource = App.Database.GetItemsAsync().Result;
             
-           // foreach (Produkt value in App.Database.GetItemAsync(item.ProduktID).Result)
-               Objednavky.ItemsSource = orders;
-
         }
     }
 }

@@ -15,13 +15,12 @@ namespace SQLite.Entity
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public DateTime Datum { get; set; }
-
-
+        //public List<VybranaVec> Items { get; set; }
         public Objednavka()
         {
             Datum = DateTime.Now;
         }
 
-
+        
     }
 }
