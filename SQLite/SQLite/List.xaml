@@ -9,32 +9,24 @@
       Title="List">
 
     <Page.Resources>
+
         <DataTemplate x:Key="OrderTemplate">
-            <StackPanel>
+            <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{Binding ID}"></TextBlock>
-                <TextBlock Text="{Binding Age}"></TextBlock>
-                <TextBlock Text="{Binding FullPrice}"></TextBlock>
-                <!--<ListView ItemsSource="{Binding Items}" ItemTemplate="{StaticResource ItemsTemplate}"></ListView>-->
+                <ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource InsideListTemplate}"  HorizontalContentAlignment="Stretch" />
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="ItemsTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding Name}"></TextBlock>
-                <TextBlock Text="{Binding Price}"></TextBlock>
+        <DataTemplate x:Key="InsideListTemplate">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="test" Width="50"></TextBlock>
+                <TextBlock Text="{Binding Pocet}" Width="50"></TextBlock>
             </StackPanel>
         </DataTemplate>
+
     </Page.Resources>
     <StackPanel>
-        <ListView x:Name="Objednavky">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Číslo objednávky" Width="100" DisplayMemberBinding="{Binding ID}" />
-                    <GridViewColumn Header="Datum vytvoření" Width="100" DisplayMemberBinding="{Binding Datum}" />
-                    <GridViewColumn Header="Položky" Width="100" DisplayMemberBinding="{Binding Items}" />
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ListView x:Name="OrderList" ItemTemplate="{StaticResource OrderTemplate}" Height="217" />
     </StackPanel>
 
 </Page>

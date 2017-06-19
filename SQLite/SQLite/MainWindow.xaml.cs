@@ -35,6 +35,7 @@ namespace SQLite
             New.NavigationService.Navigate(new NovaObjednavka(this));
 
             Alergeny.NavigationService.Navigate(new Alergeny(this));
+            
         }
     }
 }

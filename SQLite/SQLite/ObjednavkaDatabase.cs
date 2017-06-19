@@ -21,7 +21,10 @@ namespace SQLite.Entity
         {
             return database.Table<Objednavka>().ToListAsync();
         }
-
+        public Task<List<Objednavka>> GetItemDetailAsync(int id)
+        {
+            return database.QueryAsync<Objednavka>("SELECT * FROM [Objednavka] WHERE [ID] = " + id);
+        }
         // Query using SQL query string
         public Task<List<Objednavka>> GetItemsNotDoneAsync()
         {
@@ -48,6 +51,10 @@ namespace SQLite.Entity
         public Task<Produkt> GetItemAsync(int id)
         {
             return database.Table<Produkt>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+        public Task<List<Produkt>> GetItemToListAsync(int id)
+        {
+            return database.QueryAsync<Produkt>("SELECT * FROM [Produkt] WHERE [ID] = " + id);
         }
         public Task<int> SaveItemAsync(Produkt item)
         {
@@ -88,5 +95,10 @@ namespace SQLite.Entity
             int price = GetItemAsync(item.ProduktID).Result.Cena;
             return price * item.Pocet;
         }
+        public Task<List<ObjednanyProdukt>> GetOrderItemsfromOrder(int ObjednavkaID)
+        {
+            return database.QueryAsync<ObjednanyProdukt>("SELECT * FROM [ObjednanyProdukt] WHERE [ObjednavkaID] = " + ObjednavkaID);
+        }
+
     }
 }

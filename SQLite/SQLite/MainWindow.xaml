@@ -26,6 +26,7 @@
             <TabItem Header="Alergeny" Grid.Column="1">
                 <Frame x:Name="Alergeny" NavigationUIVisibility="Hidden"></Frame>
             </TabItem>
+            
         </TabControl>
     </Grid>
 </Window>

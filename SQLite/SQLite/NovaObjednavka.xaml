@@ -35,7 +35,7 @@
                                 <TextBlock Text="Cena: "></TextBlock>
                                 <TextBlock Text="{Binding Cena}"></TextBlock>
                                 <TextBlock Text=" Kč"></TextBlock>
-                                <TextBlock Text="Alergeny: "></TextBlock>
+                                <TextBlock Text=" Alergeny: "></TextBlock>
                                 <TextBlock Text="{Binding Alergeny}"></TextBlock>
                             </StackPanel>
                         </StackPanel>

@@ -119,6 +119,9 @@
     <Compile Include="Alergeny.xaml.cs">
       <DependentUpon>Alergeny.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpravitObjednavku.xaml.cs">
+      <DependentUpon>UpravitObjednavku.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VybranaVec.cs" />
     <Page Include="List.xaml">
       <SubType>Designer</SubType>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pridat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpravitObjednavku.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
